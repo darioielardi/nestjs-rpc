@@ -1,6 +1,6 @@
 {
   "name": "nestjs-rpc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple RPC implementation for NestJS",
   "author": "Dario Ielardi <dario.ielardi@gmail.com>",
   "license": "MIT",
