@@ -18,9 +18,31 @@
 
 `npm install nestjs-rpc`
 
-## Change Log
+## Usage
 
-See [Changelog](CHANGELOG.md) for more information.
+```typescript
+import { RpcController, RpcMethod } from 'nestjs-rpc';
+
+@RpcController('users')
+class UsersController {
+  @RpcMethod()
+  find() {}
+
+  @RpcMethod()
+  create() {}
+}
+```
+
+The example above gives us the following endpoints:
+
+- POST users/find
+- POST users/create
+
+#### Swagger
+
+If you are using the `@nestjs/swagger` package to generate OpenAPI specs the RPC methods will automatically have the `ApiOperation` decorator set with the `operationId` attribute set as the method name, and the controller class will have the `ApiTags` decorator with the base path as the tag.
+
+You can also provide all the `ApiOperation` options to the `RpcMethod` decorator, except for the `operationId` attribute which will be set as the method name unless specified with the `name` attribute.
 
 ## Contributing
 
